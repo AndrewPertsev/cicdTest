@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th='http://www.thymeleaf.org'>
+
+<head>
+    <meta charset="UTF-8">
+    <title>PARTICIPATION</title>
+</head>
+<body>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
+
+<div>
+<div class="container">
+    <h2>Participation</h2>
+        <a type="button" th:href="@{/}" button class="btn btn-outline-dark  btn-sm badge-pill ">BACK TO START PAGE</a>
+    </div>
+    <div>
+
+<br>
+<br>
+    <div>
+        <table >
+
+            <thead>
+            <tr align="center">
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Project</th>
+                <th>Position</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr th:each="teamProject:${participation}">
+                <td><span th:text="${employeeName}"/></td>
+                <td><span th:text="${employeeSurname}"/></td>
+                <td><span th:text="${teamProject.name}"/></td>
+                <td><span th:text="${employee.position.name}"/></td>
+            </tr>
+                <tr align="center">
+            </tbody>
+
+        </table>
+    </div>
+</div>
+</div>
+
+</body>
+</html>

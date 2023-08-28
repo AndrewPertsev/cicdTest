@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html xmlns:th='http://www.thymeleaf.org'>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SEARCH</title>
+</head>
+<body>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
+
+
+<h2 style="color:#3a988e">POSITIONS</h2>
+
+
+<!--<form action="@{/emp/positiongroup/{positionName}(positionName=${position.getName()})}" method="GET">-->
+<!--    <select id="positionName" name="positionName"/>-->
+<!--    <option value="Developer">Developer</option>-->
+<!--    <option value="Architect">Architect</option>-->
+<!--    <option value="PM">PM</option>-->
+<!--    <option value="Director">Director</option>-->
+<!--    </select>-->
+<!--    <input type="submit" value="Query"/>-->
+<!--</form>-->
+<!--<br>-->
+
+<!--        th:action="@{/emp/positiongroup/{positionName}(positionName=${position.getName()})}"-->
+<!--    <input type="hidden" name = "positionName" th:value="${positionName}"/>-->
+
+
+<a type="button" style="width:90px; background-color: #9dcbe3" th:href="@{/emp/positiongroup/Developer}" button
+   class="btn btn-outline-dark  btn-sm badge-pill ">Developer</a>
+<a type="button" style="width:90px; background-color: #9dcbe3" th:href="@{/emp/positiongroup/Architect}" button
+   class="btn btn-outline-dark  btn-sm badge-pill ">Architect</a>
+<a type="button" style="width:90px; background-color: #9dcbe3" th:href="@{/emp/positiongroup/PM}" button
+   class="btn btn-outline-dark  btn-sm badge-pill ">PManager</a>
+<a type="button" style="width:90px; background-color: #9dcbe3" th:href="@{/emp/positiongroup/Director}" button
+   class="btn btn-outline-dark  btn-sm badge-pill ">Director</a>
+<br>
+<br>
+<h2 style="color:#c100ff">PROJECT TEAMS</h2>
+
+<a type="button" style="width:100px; background-color: #b29de3" th:href="@{/emp/projectteam/Small}" button
+   class="btn btn-outline-dark  btn-sm badge-pill ">Small project</a>
+<a type="button" style="width:100px; background-color: #b29de3" th:href="@{/emp/projectteam/Medium}" button
+   class="btn btn-outline-dark  btn-sm badge-pill ">Medium</a>
+<a type="button" style="width:100px; background-color: #b29de3" th:href="@{/emp/projectteam/Large}" button
+   class="btn btn-outline-dark  btn-sm badge-pill ">Large</a>
+<a type="button" style="width:100px; background-color: #b29de3" th:href="@{/emp/projectteam/Amazing}" button
+   class="btn btn-outline-dark  btn-sm badge-pill ">Amazing</a>
+<a type="button" style="width:100px; background-color: #b29de3" th:href="@{/emp/projectteam/Huge}" button
+   class="btn btn-outline-dark  btn-sm badge-pill ">Huge project</a>
+<a type="button" style="width:100px; background-color: #b29de3" th:href="@{/emp/projectteam/Big}" button
+   class="btn btn-outline-dark  btn-sm badge-pill ">Big project</a>
+<br>
+<br>
+<h2 style="color:#153628">EMPLOYEES</h2>
+
+
+<!--<form id="group" th:action="@{/projects/list}" th:object="${employee}" th:method="post">-->
+<!--    <div class="row">-->
+<!--        <label>Name</label>-->
+<!--        <input type="text" th:field="*{employeeName}"></input>-->
+<!--    </div>-->
+<!--    <div class="row">-->
+<!--        <button id="add" type="submit">Search</button>-->
+<!--    </div>-->
+<!--</form>-->
+
+
+
+
+<a type="button" style="width:100px; background-color: #77b282" th:href="@{/projects/list/John/Fir}" button
+   class="btn btn-outline-dark  btn-sm badge-pill ">John Fir</a>
+<a type="button" style="width:100px; background-color: #77b282" th:href="@{/projects/list/Nick/Sec}" button
+   class="btn btn-outline-dark  btn-sm badge-pill ">Nick Sec</a>
+<a type="button" style="width:100px; background-color: #77b282" th:href="@{/projects/list/Bill/Thi}" button
+   class="btn btn-outline-dark  btn-sm badge-pill ">Bill Thi</a>
+<a type="button" style="width:100px; background-color: #77b282" th:href="@{/projects/list/George/Fou}" button
+   class="btn btn-outline-dark  btn-sm badge-pill ">George Fou</a>
+<a type="button" style="width:100px; background-color: #77b282" th:href="@{/projects/list/Tom/Fif}" button
+   class="btn btn-outline-dark  btn-sm badge-pill ">Tom Fif</a>
+<a type="button" style="width:100px; background-color: #77b282" th:href="@{/projects/list/Alex/Six}" button
+   class="btn btn-outline-dark  btn-sm badge-pill ">Alex Six</a>
+
+
+
+
+
+<!--<h2 style="color:#5b92dc">Participation </h2>-->
+<!--<form th:method="POST" th:action="@{/projects/list}" th:object="${participation}">-->
+<!--    <label for="employeeName">Enter Name</label>-->
+<!--    <input type="text" th:field="*{name}" id="employeeName"/>-->
+<!--    <label for="employeeSurName">Enter Surname</label>-->
+<!--    <input type="text"  id="employeeSurName"/>-->
+<!--    <input type="submit"  value="Query"/>-->
+<!--</form>-->
+<!--<form th:method="GET" >-->
+<!--    <label for="employeeName">Enter Name</label>-->
+<!--    <input type="text" th:field="*{name}" id="employeeName"/>-->
+<!--    <label for="employeeSurName">Enter Surname</label>-->
+<!--    <input type="text" th:field="*{surname}" id="employeeSurName"/>-->
+<!--    <input type="submit" th:href="@{/projects/list/*{name}/*{surname}}" value="Query"/>-->
+<!--</form>-->
+<h2>TEST message</h2>
+</body>
+</html>
