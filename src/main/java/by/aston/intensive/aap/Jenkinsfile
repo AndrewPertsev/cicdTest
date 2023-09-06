@@ -1,0 +1,34 @@
+pipeline {
+
+    agent any
+
+    stages {
+        stage('Run tests') {
+           steps{
+             //////////   bat './gradlew test'
+            }
+        }
+
+        stage('Test report') {
+            steps{
+        ///////////        bat './gradlew HiberAstonTestReport'
+            }
+        }
+
+        stage('Build') {
+            steps{
+      /////////          bat './gradlew build'
+            }
+        }
+
+    }
+
+    post {
+        success {
+            deploy adapters: [tomcat9(credentialsId: 'tomcat-derployer', path: '', url: 'http://localhost:8086/')],
+                   contextPath: '/',
+                   onFailure: false,
+                   war: '**/certificates.war'
+        }
+    }
+}
